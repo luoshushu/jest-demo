@@ -99,30 +99,47 @@ Would you like to use Typescript for the configuration file? … no
 
 ##  2、常用匹配器
 `toBe()` ：全等于
+
  `toEqual() `：递归检查对象或数组的每个字段
+
  `toBeNull() `：仅匹配null值
+
  `toBeUndefined()`：仅匹配undefined值
+
  `toBeDefined()`：与toBeUndifined相反，只要定义过就可以通过（包括null）。
+
   `toBeTruthy()`：true，就相当于判断真的
+
   `toBeFalsy()`：false，就相当于判断假的
+
  `toBeGreaterThan()`：大于 >
+
  `toBeGreaterThanOrEqual()`：大于等于 >=
+
  `toBeLessThan()`：小于 <
+
  `toBeLessThanOrEqual()`：小于等于 <=
+
  `toBeCloseTo()`：浮点数的近似相等比较
+
  `toMatch()`：字符串正则比较
+
  `toContain()`：数组比较
+
  `toThrow()`：对异常进行处理的匹配器，检测一个方法会不会抛出异常
+
 `not()`：非。相反的
 
-- `toBe()` ：全等于
+---
+
+ `toBe()` ：全等于
 ```
 test(`toBe()`, () => {
   expect(1 + 1).toBe(2)// 通过
   // expect(1+1).toBe(2) // 不通过
 })
 ```
-- `toEqual() `：递归检查对象或数组的每个字段
+`toEqual() `：递归检查对象或数组的每个字段
 ```
 test(`toEqual() 对象`, () => {
   const obj = { xx: '苏宋霖' }
@@ -135,7 +152,7 @@ test(`toEqual() 数组`, () => {
   // expect(arr).toEqual([1,2]) // 不通过
 })
 ```
-- `toBeNull() `：仅匹配null值
+`toBeNull() `：仅匹配null值
 ```
 test(`toBeNull()`, () => {
   const a = null // 通过
@@ -143,7 +160,7 @@ test(`toBeNull()`, () => {
   expect(a).toBeNull()
 })
 ```
-- `toBeUndefined()`：仅匹配undefined值
+`toBeUndefined()`：仅匹配undefined值
 ```
 test(`toBeUndefined()`, () => {
   const a = undefined // 通过
@@ -151,7 +168,7 @@ test(`toBeUndefined()`, () => {
   expect(a).toBeUndefined()
 })
 ```
-- `toBeDefined()`：与toBeUndifined相反，只要定义过就可以通过（包括null）。
+`toBeDefined()`：与toBeUndifined相反，只要定义过就可以通过（包括null）。
 ```
 test(`toBeDefined()`, () => {
   const a = '苏宋霖' // 通过   '' or null or 123
@@ -159,7 +176,7 @@ test(`toBeDefined()`, () => {
   expect(a).toBeDefined()
 })
 ```
-- `toBeTruthy()`：true，就相当于判断真的
+`toBeTruthy()`：true，就相当于判断真的
 ```
 test(`toBeTruthy()`, () => {
   const a = 1 // 通过
@@ -167,7 +184,8 @@ test(`toBeTruthy()`, () => {
   expect(a).toBeTruthy()
 })
 ```
-- `toBeFalsy()`：false，就相当于判断假的
+
+`toBeFalsy()`：false，就相当于判断假的
 ```
 test(`toBeFalsy()`, () => {
   const a = '' // 通过  null or undefined or 0 or ''
@@ -175,7 +193,7 @@ test(`toBeFalsy()`, () => {
   expect(a).toBeFalsy()
 })
 ```
-- `toBeGreaterThan()`：大于 >
+ `toBeGreaterThan()`：大于 >
 ```
 test(`toBeGreaterThan()`, () => {
   const a = 10
@@ -183,7 +201,7 @@ test(`toBeGreaterThan()`, () => {
   // expect(a).toBeGreaterThan(10)  // 不通过
 })
 ```
-- `toBeGreaterThanOrEqual()`：大于等于 >=
+`toBeGreaterThanOrEqual()`：大于等于 >=
 ```
 test(`toBeGreaterThanOrEqual()`, () => {
   const a = 10
@@ -191,7 +209,7 @@ test(`toBeGreaterThanOrEqual()`, () => {
   // expect(a).toBeGreaterThanOrEqual(11)  // 不通过
 })
 ```
-- `toBeLessThan()`：小于 <
+`toBeLessThan()`：小于 <
 ```
 test(`toBeLessThan()`, () => {
   const a = 10
@@ -199,7 +217,7 @@ test(`toBeLessThan()`, () => {
   // expect(a).toBeLessThan(9) // 不通过
 })
 ```
-- `toBeLessThanOrEqual()`：小于等于 <=
+`toBeLessThanOrEqual()`：小于等于 <=
 ```
 test(`toBeLessThanOrEqual()`, () => {
   const a = 10
@@ -207,7 +225,7 @@ test(`toBeLessThanOrEqual()`, () => {
   // expect(a).toBeLessThanOrEqual(2)// 不通过
 })
 ```
-- `toBeCloseTo()`：浮点数的近似相等比较
+`toBeCloseTo()`：浮点数的近似相等比较
 ```
 test(`toBeCloseTo()`, () => {
   const a = 0.1
@@ -216,7 +234,7 @@ test(`toBeCloseTo()`, () => {
   // expect(a+b).toBe(0.3) // 不通过
 })
 ```
-- `toMatch()`：字符串正则比较
+`toMatch()`：字符串正则比较
 ```
 test(`toMatch()`, () => {
   const a = '苏宋霖哈哈哈嘻嘻嘻'
@@ -224,7 +242,7 @@ test(`toMatch()`, () => {
   // expect(a).toMatch('苏宋霖哈哈哈嘻嘻嘻1')  // 不通过
 })
 ```
--`toContain()`：数组比较
+`toContain()`：数组比较
 ```
 test(`toContain()`, () => {
   const a = [1, 2, 3]
@@ -232,7 +250,7 @@ test(`toContain()`, () => {
   // expect(a).toContain('1') //[1] // 不通过
 })
 ```
-- `toThrow()`：对异常进行处理的匹配器，检测一个方法会不会抛出异常
+`toThrow()`：对异常进行处理的匹配器，检测一个方法会不会抛出异常
 ```
 const errorFn = () => {
   throw new Error('报错了')
@@ -245,7 +263,7 @@ test(`toThrow()`, () => {
   // expect(errorFn1).toThrow()  // 不通过
 })
 ```
-- `not()`：非。相反的
+`not()`：非。相反的
 ```
 test(`not()`, () => {
   const a = 11
